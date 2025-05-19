@@ -1,0 +1,55 @@
+class Jaket2 {
+    public static final int HARGA_A = 100000;
+    public static final int HARGA_B = 125000;
+    public static final int HARGA_C = 175000;
+
+    public void beliJaketA(int jumlah) {
+        int harga = (jumlah > 100) ? 95000 : HARGA_A;
+        int total = harga * jumlah;
+        System.out.println("Total harga Jaket A: Rp " + total);
+    }
+
+    public void beliJaketB(int jumlah) {
+        int harga = (jumlah > 100) ? 120000 : HARGA_B;
+        int total = harga * jumlah;
+        System.out.println("Total harga Jaket B: Rp " + total);
+    }
+
+    public void beliJaketC(int jumlah) {
+        int harga = (jumlah > 100) ? 160000 : HARGA_C;
+        int total = harga * jumlah;
+        System.out.println("Total harga Jaket C: Rp " + total);
+    }
+}
+
+class Aritmatika {
+    public static int tambah(int a, int b) {
+        return a + b;
+    }
+
+    public static int kurang(int a, int b) {
+        return a - b;
+    }
+
+    public int kali(int a, int b) {
+        return a * b;
+    }
+
+    public double bagi(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Tidak bisa dibagi dengan nol!");
+        }
+        return (double) a / b;
+    }
+
+    public void sederhana(int pembilang, int penyebut) {
+        int gcd = cariFPB(pembilang, penyebut);
+        pembilang /= gcd;
+        penyebut /= gcd;
+        System.out.println("Pecahan yang disederhanakan: " + pembilang + "/" + penyebut);
+    }
+
+    private int cariFPB(int a, int b) {
+        return b == 0 ? a : cariFPB(b, a % b);
+    }
+}
