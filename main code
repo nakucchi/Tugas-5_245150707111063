@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Jaket2main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Aritmatika arit = new Aritmatika();
+        Jaket jaket = new Jaket();
+
+        System.out.println("=== Operasi Aritmatika ===");
+        System.out.print("Masukkan angka pertama: ");
+        int a = input.nextInt();
+        System.out.print("Masukkan angka kedua: ");
+        int b = input.nextInt();
+
+        System.out.println("Penjumlahan: " + Aritmatika.tambah(a, b));
+        System.out.println("Pengurangan: " + Aritmatika.kurang(a, b));
+        System.out.println("Perkalian: " + arit.kali(a, b));
+        try {
+            System.out.println("Pembagian: " + arit.bagi(a, b));
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.print("Masukkan pembilang pecahan: ");
+        int pembilang = input.nextInt();
+        System.out.print("Masukkan penyebut pecahan: ");
+        int penyebut = input.nextInt();
+        arit.sederhana(pembilang, penyebut);
+
+        System.out.println("\n=== Pemesanan Jaket ===");
+        System.out.print("Masukkan jumlah Jaket A yang dibeli: ");
+        int jumlahA = input.nextInt();
+        jaket.beliJaketA(jumlahA);
+
+        System.out.print("Masukkan jumlah Jaket B yang dibeli: ");
+        int jumlahB = input.nextInt();
+        jaket.beliJaketB(jumlahB);
+
+        System.out.print("Masukkan jumlah Jaket C yang dibeli: ");
+        int jumlahC = input.nextInt();
+        jaket.beliJaketC(jumlahC);
+
+        input.close();
+    }
+}
