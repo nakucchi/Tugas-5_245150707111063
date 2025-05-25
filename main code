@@ -4,7 +4,7 @@ public class Jaket2main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Aritmatika arit = new Aritmatika();
-        Jaket jaket = new Jaket();
+        Jaket2 jaket = new Jaket2();
 
         System.out.println("=== Operasi Aritmatika ===");
         System.out.print("Masukkan angka pertama: ");
